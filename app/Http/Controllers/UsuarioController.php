@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UsuarioFormRequest;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
-    public function store(Request $request){
+    public function store(UsuarioFormRequest $request){
         $usuario = Usuario::create([
             'nome' => $request ->nome,
             'cpf' => $request ->cpf,
@@ -18,8 +19,8 @@ class UsuarioController extends Controller
 
         ]); 
         return response()->json([
-            "sucess" => true, 
-            "message" => "Registered User",
+            "success" => true, 
+            "message" => "Usuario cadastrado com sucesso",
             "data" => $usuario 
         ], 200);
     }
