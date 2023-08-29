@@ -38,4 +38,18 @@ class UsuarioController extends Controller
 
         ]);
     }
+
+    public function pesquisarPorCpf($cpf){
+        $usuario = Usuario::where('cpf', '=',$cpf )->first();
+        if($usuario == null){
+            return response()->json([
+                'status' => false,
+                'data' => "CPF não encontrado"
+            ]);
+        }
+        return response()->json([
+            'status' => true,
+            'data' => $usuario
+        ]);       
+    }
 }
