@@ -26,6 +26,12 @@ class UsuarioController extends Controller
     }
     public function pesquisarPorId($id){
         $usuario = Usuario::find($id);
+        if($usuario == null){
+            return response()-> json([
+                'status' => false,
+                'data' => "Usuário não encontrado"
+            ]);
+        }
         return response()->json([
             'status' => true,
             'data' => $usuario
