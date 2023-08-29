@@ -24,4 +24,12 @@ class UsuarioController extends Controller
             "data" => $usuario 
         ], 200);
     }
+    public function pesquisarPorId($id){
+        $usuario = Usuario::find($id);
+        return response()->json([
+            'status' => true,
+            'data' => $usuario
+
+        ]);
+    }
 }
