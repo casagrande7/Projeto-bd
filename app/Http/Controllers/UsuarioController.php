@@ -60,4 +60,21 @@ class UsuarioController extends Controller
             'data' => $usuarios
         ]);       
     }
+    public function pesquisaPorNome(Request $request){
+        $usuarios = Usuario::where('nome', 'like', '%'. $request->nome .'%')->get();
+
+        if(count($usuarios)> 0){
+
+        return response()->json([
+            'status' => true,
+            'data' => $usuarios
+        ]);       
+
+    }
+    return response()->json([
+        'status' => false,
+        'message' => 'Não há resultados para pesquisa.'
+
+    ]);
+}
 }
