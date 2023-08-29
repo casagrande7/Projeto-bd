@@ -52,4 +52,12 @@ class UsuarioController extends Controller
             'data' => $usuario
         ]);       
     }
+    public function retornarTodos(){
+        $usuarios = Usuario::all();
+
+        return response()->json([
+            'status' => true,
+            'data' => $usuarios
+        ]);       
+    }
 }

@@ -20,3 +20,5 @@ Route::post('store', [UsuarioController::class, 'store']);
 Route::get('find/{id}',[UsuarioController::class, 'pesquisarPorId'] );
 
 Route::get('find/cpf/{cpf}', [UsuarioController::class, 'pesquisarPorCpf']);
+
+Route::get('find/all', [UsuarioController::class, 'retornarTodos']);
