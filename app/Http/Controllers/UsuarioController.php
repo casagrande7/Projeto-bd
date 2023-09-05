@@ -88,5 +88,10 @@ public function excluir($id){
         ]);
     }
 
+    $usuario->delete();
+    return response() -> json([
+        'status' => true,
+        'message' => "Usuário excluído com sucesso"
+    ]);
 }
 }
