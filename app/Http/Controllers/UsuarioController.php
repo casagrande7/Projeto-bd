@@ -94,4 +94,9 @@ public function excluir($id){
         'message' => "Usuário excluído com sucesso"
     ]);
 }
+
+public function update(Request $request){
+    $usuario = Usuario::find($request->id);
+
+}
 }
