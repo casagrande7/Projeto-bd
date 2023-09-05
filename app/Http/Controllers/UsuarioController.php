@@ -104,9 +104,26 @@ public function update(Request $request){
             'message' => "Usuário não encontrado"
         ]);
     }
-   $usuario->Nome = $request-> Nome;
-   $usuario->CPF = $request -> CPF;
-   $usuario->Contato = $request->Contato;
-   $usuario->Email = $request->Email;
+    if(isset($request->Nome)){
+        $usuario->Nome = $request-> Nome;
+    }
+
+    if(isset($request->CPF)){
+        $usuario->CPF = $request -> CPF;
+    }
+
+    if(isset($request->Contato)){
+        $usuario->Contato = $request->Contato;
+    }
+
+    if(isset($request->Email)){
+        $usuario->Email = $request->Email;
+    }
+
+    $usuario->update();
+    return response()-> json([
+        'status' => true,
+        'message' => "Usuário atualizado"
+    ]);
 }
 }
