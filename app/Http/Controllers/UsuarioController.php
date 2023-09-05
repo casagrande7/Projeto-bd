@@ -104,6 +104,10 @@ public function update(Request $request){
             'message' => "Usuário não encontrado"
         ]);
     }
-
+    $usuario->put();
+    return response() -> json([
+        'status' => true,
+        'message' => ""
+    ]);
 }
 }
