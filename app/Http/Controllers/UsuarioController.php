@@ -98,5 +98,12 @@ public function excluir($id){
 public function update(Request $request){
     $usuario = Usuario::find($request->id);
 
+    if(!isset($usuario)){
+        return response() ->json([
+            'status' => false,
+            'message' => "Usuário não encontrado"
+        ]);
+    }
+
 }
 }
