@@ -26,3 +26,5 @@ Route::get('all', [UsuarioController::class, 'retornarTodos']);
 Route::post('nome', [UsuarioController::class, 'pesquisaPorNome']);
 
 Route::delete('delete/{id}', [UsuarioController::class, 'excluir']);
+
+Route::put('update',[UsuarioController::class, 'update']);
