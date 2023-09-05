@@ -11,11 +11,11 @@ class UsuarioController extends Controller
 {
     public function store(UsuarioFormRequest $request){
         $usuario = Usuario::create([
-            'nome' => $request ->nome,
-            'cpf' => $request ->cpf,
-            'cellphone' => $request ->cellphone,
-            'email' => $request ->email,
-            'password' => Hash::make($request->password)
+            'Nome' => $request ->Nome,
+            'CPF' => $request ->CPF,
+            'Contato' => $request ->Contato,
+            'Email' => $request ->Email,
+            'Password' => Hash::make($request->Password)
 
         ]); 
         return response()->json([
@@ -61,7 +61,7 @@ class UsuarioController extends Controller
         ]);       
     }
     public function pesquisaPorNome(Request $request){
-        $usuarios = Usuario::where('nome', 'like', '%'. $request->nome .'%')->get();
+        $usuarios = Usuario::where('nome', 'like', '%'. $request->Nome .'%')->get();
 
         if(count($usuarios)> 0){
 
@@ -76,5 +76,17 @@ class UsuarioController extends Controller
         'message' => 'Não há resultados para pesquisa.'
 
     ]);
+}
+
+public function excluir($id){
+    $usuario = Usuario::find($id);
+
+    if(!isset($usuario)){
+        return response() -> json([
+            'status' => false,
+            'message' => "Usuário não encontrado"
+        ]);
+    }
+
 }
 }
