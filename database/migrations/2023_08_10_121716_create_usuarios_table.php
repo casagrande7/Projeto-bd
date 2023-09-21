@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
-            $table->string('Nome', 80)->nullable(false);
-            $table->string('CPF', 11)->unique()->nullable(false);
-            $table->string('Contato', 15)->nullable(true);
-            $table->string('Email', 100)->unique()->nullable(false);
-            $table->string('Password',)->nullable(false);
+            $table->string('nome', 80)->nullable(false);
+            $table->string('cpf', 11)->unique()->nullable(false);
+            $table->string('contato', 15)->nullable(true);
+            $table->string('email', 100)->unique()->nullable(false);
+            $table->string('password',)->nullable(false);
             $table->timestamps();
         });
     }
