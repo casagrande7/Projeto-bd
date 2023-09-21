@@ -24,11 +24,11 @@ class UsuarioFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'Nome' => 'required|max:80|min:5',
-            'CPF' => 'required|max:11|min:11|unique:usuarios,cpf',
-            'Contato' => 'required|max:15|min:10',
-            'Email' => 'required|email|unique:usuarios,email',
-            'Password' => 'required'
+            'nome' => 'required|max:80|min:5',
+            'cpf' => 'required|max:11|min:11|unique:usuarios,cpf',
+            'contato' => 'required|max:15|min:10',
+            'email' => 'required|email|unique:usuarios,email',
+            'password' => 'required'
         ];
     }
     public function failedValidation(Validator $validator){
@@ -41,19 +41,19 @@ class UsuarioFormRequest extends FormRequest
 
         public function messages(){
             return [
-                'Nome.required' => 'Nome é obrigatório',
-                'Nome.max' => 'O campo nome deve conter no máximo 80 caracteres',
-                'Nome.min' => 'O campo nome deve conter no mínimo 5 caracteres',
-                'CPF.required' => 'CPF é obrigatório',
-                'CPF.max' => 'O CPF deve conter no máximo 11 caracteres',
-                'CPF.min' => 'O CPF deve conter no mínimo 11 caracteres',
-                'CPF.unique'=> 'CPF já cadastrado no sistema',
-                'Contato.required' => 'Cellphone é obrigatório',
-                'Contato.max' => 'O campo cellphone deve conter no máximo 15 caracteres',
-                'Contato.min' => 'O campo cellphone deve conter no mínimo 10 caracteres',
-                'Email.required' => 'Email é obrigatório',
-                'Email.unique' => 'Email já cadastrado no sistema',
-                'Password.required'=> 'Password é obrigatório'
+                'nome.required' => 'Nome é obrigatório',
+                'nome.max' => 'O campo nome deve conter no máximo 80 caracteres',
+                'nome.min' => 'O campo nome deve conter no mínimo 5 caracteres',
+                'cpf.required' => 'CPF é obrigatório',
+                'cpf.max' => 'O CPF deve conter no máximo 11 caracteres',
+                'cpf.min' => 'O CPF deve conter no mínimo 11 caracteres',
+                'cpf.unique'=> 'CPF já cadastrado no sistema',
+                'contato.required' => 'Cellphone é obrigatório',
+                'contato.max' => 'O campo cellphone deve conter no máximo 15 caracteres',
+                'contato.min' => 'O campo cellphone deve conter no mínimo 10 caracteres',
+                'email.required' => 'Email é obrigatório',
+                'email.unique' => 'Email já cadastrado no sistema',
+                'password.required'=> 'Password é obrigatório'
 
             ];
         }

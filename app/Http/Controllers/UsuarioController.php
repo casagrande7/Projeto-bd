@@ -11,11 +11,11 @@ class UsuarioController extends Controller
 {
     public function store(UsuarioFormRequest $request){
         $usuario = Usuario::create([
-            'Nome' => $request ->Nome,
-            'CPF' => $request ->CPF,
-            'Contato' => $request ->Contato,
-            'Email' => $request ->Email,
-            'Password' => Hash::make($request->Password)
+            'nome' => $request ->nome,
+            'cpf' => $request ->cpf,
+            'contato' => $request ->contato,
+            'email' => $request ->email,
+            'password' => Hash::make($request->password)
 
         ]); 
         return response()->json([
@@ -104,20 +104,20 @@ public function update(Request $request){
             'message' => "Usuário não encontrado"
         ]);
     }
-    if(isset($request->Nome)){
-        $usuario->Nome = $request-> Nome;
+    if(isset($request->nome)){
+        $usuario->nome = $request-> nome;
     }
 
-    if(isset($request->CPF)){
-        $usuario->CPF = $request -> CPF;
+    if(isset($request->cpf)){
+        $usuario->cpf = $request -> cpf;
     }
 
-    if(isset($request->Contato)){
-        $usuario->Contato = $request->Contato;
+    if(isset($request->contato)){
+        $usuario->contato = $request->contato;
     }
 
-    if(isset($request->Email)){
-        $usuario->Email = $request->Email;
+    if(isset($request->email)){
+        $usuario->email = $request->email;
     }
 
     $usuario->update();
