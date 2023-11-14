@@ -129,6 +129,7 @@ public function update(Request $request){
 
 public function exportarCsv(){
     $usuarios = Usuario::all();
-    dd($usuarios);
+    
+    $nomeArquivo = 'usuarios.csv';
 }
 }
