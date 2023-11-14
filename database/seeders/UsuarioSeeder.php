@@ -11,13 +11,15 @@ class UsuarioSeeder extends Seeder
 {
     public function run(): void
     {
-        Usuario::create([
-            'nome' => 'João Pedro',
-            'cpf' => '11111111111',
-            'contato' => '11112222221',
-            'email' => 'joao@gmail.com.br',
-            'password' => Hash::make('123456')
+        for($i =0; $i<100; $i++){
+            Usuario::create([
+                'nome' => 'João Pedro'.$i,
+                'cpf' => rand(00000000001, 99999999999),
+                'contato' => '11112222221',
+                'email' => 'joao' .$i. '@gmail.com.br',
+                'password' => Hash::make('123456')
 
         ]); 
+    }
     }
 }
