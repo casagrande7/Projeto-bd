@@ -11,7 +11,7 @@ class UsuarioSeeder extends Seeder
 {
     public function run(): void
     {
-        for($i =0; $i<100; $i++){
+        for($i =0; $i<400; $i++){
             Usuario::create([
                 'nome' => 'João Pedro'.$i,
                 'cpf' => rand(00000000001, 99999999999),
