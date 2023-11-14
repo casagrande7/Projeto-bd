@@ -126,4 +126,9 @@ public function update(Request $request){
         'message' => "Usuário atualizado"
     ]);
 }
+
+public function exportarCsv(){
+    $usuarios = Usuario::all();
+    dd($usuarios);
+}
 }
